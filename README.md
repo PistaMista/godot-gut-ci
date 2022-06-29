@@ -14,9 +14,7 @@ Some action parameter can be customised using the `with` property:
 
 |parameter|description|default|
 |---|---|---|
-|godot_version|The godot version you want to use to run your tests|3.2.2|
-|unit_test|The godot resource folder containing your unit tests|res://tests/unit|
-|integration_test|The godot resource folder containing your integration tests||
+|godot_version|The godot version you want to use to run your tests|3.4.4|
 
 **NOTE**: If you're customising `unit_test` or `integration_test`, don't forget to specify the `res://` prefix.
 
@@ -38,6 +36,4 @@ jobs:
         uses: PistaMista/godot-gut-ci@master
         with:
           godot_version: 3.4.4 # uses godot 3.4.4
-          unit_test: res://test/unit # specify the path for the integration tests
-          integration_test: res://test/integration # specify the path for the integration tests
 ```

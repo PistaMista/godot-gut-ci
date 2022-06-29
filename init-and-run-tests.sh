@@ -30,4 +30,4 @@ mv Godot_v${GODOT_VERSION}-stable_linux_headless.64 /usr/local/bin/godot
 # Launch the tests
 #
 
-/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit -gdir=$UNIT_TEST_PATH $INTEGRATION_TEST_PATH
+/usr/local/bin/godot -s res://addons/gut/gut_cmdln.gd -d --no-window
