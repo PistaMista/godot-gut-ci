@@ -30,4 +30,4 @@ mv Godot_v${GODOT_VERSION}-stable_linux_headless.64 /usr/local/bin/godot
 # Launch the tests
 #
 
-/usr/local/bin/godot -s res://addons/gut/gut_cmdln.gd -d --no-window
+/usr/local/bin/godot -s res://addons/gut/gut_cmdln.gd -d
