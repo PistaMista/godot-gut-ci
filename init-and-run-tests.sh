@@ -30,4 +30,5 @@ mv Godot_v${GODOT_VERSION}-stable_linux_headless.64 /usr/local/bin/godot
 # Launch the tests
 #
 
-yes q | /usr/local/bin/godot -s res://addons/gut/gut_cmdln.gd -d
+rm -f test-out.xml
+yes q | /usr/local/bin/godot -s res://addons/gut/gut_cmdln.gd -d -gjunit_xml_file=test-out.xml
