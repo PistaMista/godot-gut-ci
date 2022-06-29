@@ -1,7 +1,7 @@
 # Godot GUT CI
 
 This [GitHub action](https://github.com/features/actions) allows you to run your [Godot GUT tests](https://github.com/bitwes/Gut), 
-so you can make sure nothing is broken :).
+so you can make sure nothing is broken :D.
 
 ## How to use
 
@@ -9,26 +9,6 @@ Create a folder called `.github/workflows` in the root project folder.
 Then create a yaml file to configure your tests, for example `godot-tests.yml`.
 
 ### Yaml content
-
-Copy and paste the following content in your yaml file:
-
-```yaml
-name: "godot gut test"
-on: push
-
-jobs:
-  execute-gut:
-    name: Run GUT tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Docker test
-        uses: ceceppa/godot-gut-ci@master
-```
-
-### With
 
 Some action parameter can be customised using the `with` property:
 
@@ -43,7 +23,7 @@ Some action parameter can be customised using the `with` property:
 #### Example
 
 ```yaml
-name: "godot gut test"
+name: "Godot GUT"
 on: push
 
 jobs:
@@ -52,10 +32,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Docker test
-        uses: ceceppa/godot-gut-ci@master
+        uses: actions/checkout@v3
+	  
+      - name: Run the tests
+        uses: PistaMista/godot-gut-ci@master
         with:
-          godot_version: 3.2.1 # uses godot 3.2.1
-          integration_test: res://tests/integration # specify the path for the integration tests
+          godot_version: 3.4.4 # uses godot 3.4.4
+          unit_test: res://test/unit # specify the path for the integration tests
+          integration_test: res://test/integration # specify the path for the integration tests
 ```

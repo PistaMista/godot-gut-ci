@@ -30,10 +30,4 @@ mv Godot_v${GODOT_VERSION}-stable_linux_headless.64 /usr/local/bin/godot
 # Launch the tests
 #
 
-# This is needed to test this Docker image
-if [ -f "test-project/project.godot" ]
-then
-  cd test-project
-fi
-
 /usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit -gdir=$UNIT_TEST_PATH $INTEGRATION_TEST_PATH
