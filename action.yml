@@ -4,20 +4,28 @@ branding:
   icon: alert-triangle
   color: gray-dark
 inputs:
-  godot_version:
+  godot-version:
     description: 'Godot Version'
     required: false
-    default: '3.2.2'
-  unit_test:
-    description: 'Unit tests path'
+    default: '3.4.4'
+  import-scene:
+    description: 'What scene to open while importing assets'
     required: true
-  integration_test:
-    description: 'Integration tests path'
+  import-time:
+    description: 'How long to spend on importing assets'
     required: false
+    default: '1'
+  test-timeout:
+    description: 'The maximum time (in seconds) the tests are allowed to run for'
+    required: false
+    default: '150'
+
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.godot_version }}
-    - ${{ inputs.unit_test }}
-    - ${{ inputs.integration_test }}
+    - ${{ inputs.godot-version }}
+    - ${{ inputs.import-scene }}
+    - ${{ inputs.import-time }}
+    - ${{ inputs.test-timeout }}
