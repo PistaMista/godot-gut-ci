@@ -5,6 +5,7 @@ GODOT_VERSION=$1
 IMPORT_SCENE="$2"
 IMPORT_TIME=$3
 TEST_TIMEOUT=$4
+PROJECT_FOLDER="$5"
 
 
 # Download Godot
@@ -17,6 +18,8 @@ mv Godot_v${GODOT_VERSION}-stable_linux_headless.64 /usr/local/bin/godot
 #
 # Import assets
 #
+
+cd "$PROJECT_FOLDER"
 
 echo "Importing assets for $IMPORT_TIME seconds..."
 timeout $IMPORT_TIME /usr/local/bin/godot --editor "$IMPORT_SCENE" || true

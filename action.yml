@@ -19,6 +19,10 @@ inputs:
     description: 'The maximum time (in seconds) the tests are allowed to run for'
     required: false
     default: '150'
+  project-folder:
+    description: 'The folder where the project.godot file is located.'
+    required: false
+    default: '.'
 
 
 runs:
@@ -29,3 +33,4 @@ runs:
     - ${{ inputs.import-scene }}
     - ${{ inputs.import-time }}
     - ${{ inputs.test-timeout }}
+    - ${{ inputs.project-folder }}
