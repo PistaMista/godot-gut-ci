@@ -7,7 +7,7 @@ inputs:
   godot-version:
     description: 'Godot Version'
     required: false
-    default: '3.4.4'
+    default: '3.5.1'
   import-scene:
     description: 'What scene to open while importing assets'
     required: true
